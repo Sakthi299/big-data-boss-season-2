@@ -1,0 +1,23 @@
+import pandas as pd
+import numpy as np 
+df = pd.read_csv("Final.csv") 
+#to read the data in the year
+print (df['Year']) 
+#to check if any null data is present in the year
+print (df['Year'].isnull())
+#to read the data in the Id
+print (df['Id'])
+#if inequlities are there then to count the number 
+missing_values=["Nan"]
+df = pd.read_csv("Final.csv", na_values=missing_values)
+print (df['Id'])
+cnt = 0
+for row in df['Id']:
+    try:
+        int(row)
+        df.loc[cnt, 'Id']=np.nan 
+    except ValueError:
+        pass
+    cnt+=1
+    #total no of iniequalities
+print (df.isnull().sum())
