@@ -1,0 +1,15 @@
+import pandas as pd
+import numpy as np 
+from matplotlib import pyplot as plt
+
+df = pd.read_csv('Final.csv') 
+#print(df)
+#print(type(df))
+#print(df.Year)
+#print(type(df.Year))
+print(plt.xlabel('Year'))
+print(plt.ylabel("rating"))
+print(plt.xlim(1950,2020))
+print(plt.ylim(0,10))
+print(plt.plot(df.Year, df.Rating, df.Id))
+print(plt.show())
